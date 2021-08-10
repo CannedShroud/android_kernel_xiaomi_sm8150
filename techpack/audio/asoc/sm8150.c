@@ -5260,8 +5260,7 @@ static int msm_mi2s_snd_startup(struct snd_pcm_substream *substream)
 		ret = msm_mi2s_set_sclk(substream, true);
 		if (ret < 0) {
 			dev_err(rtd->card->dev,
-				"%s: afe lpass clock failed ",
-				"to enable MI2S clock, err:%d\n",
+				"to enable MI2S clock, err:%s\n",
 				__func__, ret);
 			goto clean_up;
 		}
