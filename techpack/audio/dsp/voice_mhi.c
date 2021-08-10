@@ -359,7 +359,7 @@ static void voice_mhi_map_pcie_and_send(struct work_struct *work)
 {
 	dma_addr_t iova, phys_addr;
 	uint32_t mem_size;
-	struct device *md = 0;
+	struct device *md;
 
 	mutex_lock(&voice_mhi_lcl.mutex);
 	if (voice_mhi_lcl.mhi_dev) {
@@ -437,7 +437,7 @@ static int voice_mhi_pcie_up_callback(struct mhi_device *voice_mhi_dev,
 static void voice_mhi_pcie_down_callback(struct mhi_device *voice_mhi_dev)
 {
 	dma_addr_t iova;
-	struct device *md = 0;
+	struct device *md = NULL;
 
 	mutex_lock(&voice_mhi_lcl.mutex);
 
